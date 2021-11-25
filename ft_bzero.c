@@ -1,25 +1,15 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ugina <ugina@student.21-school.r>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/16 20:17:30 by ugina             #+#    #+#             */
-/*   Updated: 2021/10/16 22:11:27 by ugina            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ft_printf.h"
 
-void	ft_bzero(void *dest, size_t n)
+void ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (i < n)
 	{
-		*(unsigned char *)(dest + i) = '\0';
+		*(char*)(s + i) = 0;
 		i++;
 	}
 }
