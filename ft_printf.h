@@ -14,6 +14,7 @@ int ft_digit(int n, int fd);
 int ft_printf(const char *, ...);
 int ft_linker(va_list arg,char type);
 int ft_unsigned(long int n,int fd);
+int ft_hex(size_t num, int fd);
 
 
 #endif

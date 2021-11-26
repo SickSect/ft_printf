@@ -17,10 +17,11 @@ int main()
   printf(" %d\n",ft_printf("test6 %u", -123));
   printf(" %d\n",ft_printf("test7 %u", 123));
   printf(" %d\n",ft_printf("test8 %u", 0));
-  printf("%x %X %x %X",123, 123, -123, -123);
+  printf(" ORIGINAL %x %X %x %X %x %X\n",123, 123, -123, -123, 0 , 10);
   printf(" %d\n",ft_printf("test9 %x",123));
-  printf(" %d\n",ft_printf("test9 %X",123));
-  printf(" %d\n",ft_printf("test9 %x",-123));
-  printf(" %d\n",ft_printf("test9 %X",-123));
-
+  printf(" %d\n",ft_printf("test10 %X",123));
+  printf(" %d\n",ft_printf("test11 %x",-123));
+  printf(" %d\n",ft_printf("test12 %X",-123));
+  printf(" %d\n",ft_printf("test13 %x",0));
+  printf(" %d\n",ft_printf("test14 %X",10));
 }

@@ -15,10 +15,8 @@ int ft_linker(va_list arg,char type)
     return (ft_unsigned(va_arg(arg,int),1));
   else if(type == '%')
     return(1);
-  else if (type == 'X')
+  else if (type == 'X' || type == 'x')
     return (ft_hex(va_arg(arg,int),1));
-
-
   return(0);
 }
 

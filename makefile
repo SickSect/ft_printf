@@ -1,6 +1,6 @@
 name = ft_printf
 src =	ft_printf.c main.c ft_digit.c ft_bzero.c ft_putchar.c \
-	ft_string.c ft_unsigned.c
+	ft_string.c ft_unsigned.c ft_hex.c
 obj = $(src:.c=.o)
 rm = rm -f
 
