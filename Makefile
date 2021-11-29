@@ -1,11 +1,11 @@
-name = ft_printf
-src =	ft_printf.c main.c ft_digit.c ft_bzero.c ft_putchar.c \
-	ft_string.c ft_unsigned.c ft_hex.c
+name = libftprintf.a
+src =	ft_printf.c ft_digit.c ft_bzero.c ft_putchar.c \
+	ft_string.c ft_unsigned.c ft_hex.c ft_hex_X.c
 obj = $(src:.c=.o)
 rm = rm -f
 
 $(name): $(obj)
-	gcc -Wall -Werror -Wextra $(obj) -o $(name)
+	ar rc $(name) $(obj)
 
 all: $(name)
 

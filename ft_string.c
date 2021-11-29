@@ -1,14 +1,18 @@
 #include "ft_printf.h"
 
-int ft_string(char *str,int fd)
+void ft_string(char *str,int *bytes)
 {
   int i;
 
   i = 0;
-  while (str[i])
+  if(str == NULL)
+    ft_string("(null)", bytes);
+  else
   {
-    ft_putchar_fd(str[i], fd);
-    i++;
+    while (str[i])
+    {
+      ft_putchar(str[i], bytes);
+      i++;
+    }
   }
-  return (i + 1);
 }

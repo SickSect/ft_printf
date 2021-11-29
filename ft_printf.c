@@ -1,23 +1,26 @@
 #include "ft_printf.h"
 
-int ft_linker(va_list arg,char type)
+void ft_linker(va_list arg,char type, int *bytes)
 {
-  if(type == 'd' || type == 'i')
-    return (ft_digit(va_arg(arg,int), 1));
+  if (type == 'c')
+    ft_putchar(va_arg(arg, int), bytes);
   else if (type == 's')
-    return (ft_string(va_arg(arg,char *), 1));
-  else if (type == 'c')
-  {
-    ft_putchar_fd(va_arg(arg, int), 1);
-    return (1);
-  }
+    ft_string(va_arg(arg,char *), bytes);
+  else if(type == 'd' || type == 'i')
+      ft_digit(va_arg(arg,int), bytes);
   else if (type == 'u')
-    return (ft_unsigned(va_arg(arg,int),1));
+    ft_unsigned(va_arg(arg,int),bytes);
   else if(type == '%')
-    return(1);
-  else if (type == 'X' || type == 'x')
-    return (ft_hex(va_arg(arg,int),1));
-  return(0);
+    ft_putchar('%',bytes);
+  else if (type == 'x')
+    ft_hex(va_arg(arg,int),bytes);
+  else if (type == 'X')
+    ft_hex_X(va_arg(arg,int),bytes);
+  else if (type == 'p')
+    ft_void_pointer(va_arg(arg,void *),bytes);
+
+
+  return ;
 }
 
 int ft_printf(const char *stroke, ...)
@@ -33,14 +36,15 @@ int ft_printf(const char *stroke, ...)
   {
     if(stroke[i] == '%')
     {
-      bytes += ft_linker(arg,stroke[++i]);
+      i++;
+      ft_linker(arg,stroke[i],&bytes);
     }
     else
     {
-      ft_putchar_fd(stroke[i],0);
-      bytes++;
+      ft_putchar(stroke[i],&bytes);
     }
     i++;
   }
+  va_end(arg);
   return(bytes);
 }

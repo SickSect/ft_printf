@@ -1,22 +1,15 @@
 #include "ft_printf.h"
 
-int ft_hex(size_t num, int fd)
+void ft_hex(unsigned int n, int *bytes)
 {
-  int count;
-  int tmp;
 
-  count = 0;
-  if(num)
+  if (n < 16)
   {
-      tmp = num % 16;
-      num = num / 16;
-      count += ft_hex(num,fd);
-      ft_putchar_fd(HEX[tmp],fd);
+    ft_putchar(HEX[n],bytes);
   }
-  if(num == 0 && count == 0)
+  else
   {
-    ft_putchar_fd('0',fd);
-    return (count + 1);
+    ft_hex(n / 16, bytes);
+    ft_putchar (HEX[n % 16], bytes);
   }
-  return (count);
 }

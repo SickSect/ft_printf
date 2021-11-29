@@ -1,6 +1,7 @@
 #include "ft_printf.h"
 
-void ft_putchar_fd(char c, int fd)
+void ft_putchar(int c, int *bytes)
 {
-	write(fd, &c, 1);
+	write(1, &c, 1);
+	(*bytes)++;
 }
