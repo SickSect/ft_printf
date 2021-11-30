@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void ft_hex(unsigned int n, int *bytes)
+void ft_hex(unsigned long int n, int *bytes)
 {
 
   if (n < 16)

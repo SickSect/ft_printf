@@ -13,14 +13,11 @@ void ft_linker(va_list arg,char type, int *bytes)
   else if(type == '%')
     ft_putchar('%',bytes);
   else if (type == 'x')
-    ft_hex(va_arg(arg,int),bytes);
+    ft_hex(va_arg(arg,unsigned int),bytes);
   else if (type == 'X')
-    ft_hex_X(va_arg(arg,int),bytes);
+    ft_hex_X(va_arg(arg,unsigned int),bytes);
   else if (type == 'p')
     ft_void_pointer(va_arg(arg,void *),bytes);
-
-
-  return ;
 }
 
 int ft_printf(const char *stroke, ...)

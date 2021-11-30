@@ -1,6 +1,7 @@
 name = libftprintf.a
 src =	ft_printf.c ft_digit.c ft_bzero.c ft_putchar.c \
-	ft_string.c ft_unsigned.c ft_hex.c ft_hex_X.c
+	ft_string.c ft_unsigned.c ft_hex.c ft_hex_X.c \
+	ft_void_pointer.c
 obj = $(src:.c=.o)
 rm = rm -f
 

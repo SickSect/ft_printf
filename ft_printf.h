@@ -15,8 +15,8 @@ void ft_digit(int n, int *bytes);
 int ft_printf(const char *, ...);
 void ft_linker(va_list arg,char type,int *bytes);
 void ft_unsigned(unsigned int n,int *bytes);
-void ft_hex(unsigned int n, int *bytes);
-void ft_hex_X(unsigned int n, int *bytes);
+void ft_hex(unsigned long int n, int *bytes);
+void ft_hex_X(unsigned long int n, int *bytes);
 void ft_void_pointer(void *ptr, int *bytes);
 
 
